@@ -1,10 +1,7 @@
-input.onLogoEvent(TouchButtonEvent.LongPressed, function () {
-    index += -1
-})
-input.onLogoEvent(TouchButtonEvent.Pressed, function () {
-    index += 1
-})
-let index = 0
 basic.forever(function () {
-    basic.showNumber(index)
+    if (input.soundLevel() > 50) {
+        basic.showIcon(IconNames.Sad)
+    } else {
+        basic.showIcon(IconNames.Happy)
+    }
 })
