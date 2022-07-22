@@ -1,9 +1,13 @@
-basic.forever(function () {
-    for (let index = 0; index <= 10; index++) {
-        led.plotBarGraph(
-        index,
-        10
-        )
-        basic.pause(500)
-    }
+input.onButtonPressed(Button.A, function () {
+    led.unplot(x, 2)
+    x += -1
+    led.plot(x, 2)
 })
+input.onButtonPressed(Button.B, function () {
+    led.unplot(x, 2)
+    x += 1
+    led.plot(x, 2)
+})
+let x = 0
+x = 2
+led.plot(x, 2)
